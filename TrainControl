@@ -1,0 +1,127 @@
+// Train Controller Program
+// Dennis Toy Jr 
+// March 25, 2016
+
+void setup() {
+
+Keyboard.begin();  
+
+
+//Control Inputs 
+//Main Train Functions
+pinMode(8, INPUT_PULLUP); //Switch 
+pinMode(9, INPUT_PULLUP); //Horn
+pinMode(11,INPUT_PULLUP); //Sander
+pinMode(7, INPUT_PULLUP);//Reverser Forward
+pinMode(6, INPUT_PULLUP);//Reverser Backwards
+pinMode(10, INPUT_PULLUP);//Emergency Brake
+pinMode(12, INPUT_PULLUP);//Bell
+pinMode(5, INPUT_PULLUP);// Increase Brake
+pinMode(4, INPUT_PULLUP);// Decrease Brake
+pinMode(2, INPUT_PULLUP);// Increase Throttle
+pinMode(3, INPUT_PULLUP);// Decrease Throttle
+}
+    
+void loop() {
+  
+// Main Train Functions 
+int buttonState8 = digitalRead(8);
+int buttonState9 = digitalRead(9);
+int buttonState11 = digitalRead(11);
+int buttonState12 = digitalRead(12); 
+int buttonState7 = digitalRead(7);
+int buttonState6 = digitalRead(6); 
+int buttonState10 = digitalRead(10);
+
+//Brake and Throttle Control 
+
+//Brake
+int buttonState5 = digitalRead(5);
+int buttonState4 = digitalRead(4);
+
+//Throttle
+int buttonState2 = digitalRead(2);
+int buttonState3 = digitalRead(3); 
+
+// Main Functions
+
+//Common Train Controls
+if (buttonState8 == LOW){
+Keyboard.press(71);
+}
+else {
+Keyboard.release(71);
+}
+
+
+if (buttonState9 == LOW) {
+Keyboard.press(32);
+}
+else{
+Keyboard.release(32);
+}
+
+// Fire Button = Left Ctrl key
+if(buttonState11 == LOW) {
+Keyboard.press(88);
+}
+else{
+Keyboard.release(88);
+}
+
+if(buttonState12 == LOW) {
+Keyboard.press(66);
+}
+else{
+Keyboard.release(66); 
+}
+
+if(buttonState7 == LOW) {
+Keyboard.press(83);
+} 
+else{
+Keyboard.release(83); 
+}
+
+if(buttonState6 == LOW) {
+Keyboard.press(87);
+}
+else{
+Keyboard.release(87); 
+}                 
+
+if(buttonState10 == LOW) {
+Keyboard.press(178);
+}
+else{
+Keyboard.release(178);
+} 
+
+if(buttonState2 == LOW) {
+Keyboard.press(68);
+}
+else{
+Keyboard.release(68); 
+}
+
+if(buttonState3 == LOW) {
+  Keyboard.press(65);
+}
+else{
+  Keyboard.release(65);
+}
+
+if(buttonState5 == LOW) {
+  Keyboard.press(59);
+}
+else{
+  Keyboard.release(59);
+}
+
+if (buttonState4 == LOW) {
+  Keyboard.press(44);
+}
+else{
+  Keyboard.release(44); 
+}
+}
